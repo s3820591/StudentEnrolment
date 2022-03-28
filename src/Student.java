@@ -39,18 +39,29 @@ public class Student implements StudentEnrolmentManager {
     }
 
     @Override
-    public void add() {
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
 
+    @Override
+    public void add() {
+        students.add(this);
     }
 
     @Override
     public void update() {
-
+        if (students.indexOf(this.id) != -1){
+            System.out.println("There is no student with this id!");
+        }
     }
 
     @Override
     public void delete() {
-
+        students.remove(students.indexOf(this.id));
     }
 
     @Override
