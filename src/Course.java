@@ -26,6 +26,15 @@ public class Course implements StudentEnrolmentManager {
     }
 
     @Override
+    public String toString() {
+        return "Course{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", credits=" + credits +
+                '}';
+    }
+
+    @Override
     public void add() {
 
     }
@@ -49,4 +58,6 @@ public class Course implements StudentEnrolmentManager {
     public void getAll() {
 
     }
+
+
 }
