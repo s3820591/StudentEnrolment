@@ -15,7 +15,7 @@ public class StudentEnrolment implements StudentEnrolmentManager{
         this.semester = semester;
     }
 
-    ArrayList<StudentEnrolment> enrolment = new ArrayList<StudentEnrolment>();
+    ArrayList<StudentEnrolment> enrolment = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -46,13 +46,13 @@ public class StudentEnrolment implements StudentEnrolmentManager{
         for (int j = 0; j < a.size(); j++){
             System.out.println(j+1 + ". " + enrolment.get(a.get(j)) );
         }
-        
+
     }
 
     @Override
     public void delete() {
         try {
-            enrolment.remove(enrolment.indexOf(this));
+            enrolment.remove(this);
         }catch (Exception e){
             System.out.println("Wrong format of something");
         }
