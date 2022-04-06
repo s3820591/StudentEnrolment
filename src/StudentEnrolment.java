@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class StudentEnrolment implements StudentEnrolmentManager{
     Student student;
@@ -63,16 +64,10 @@ public class StudentEnrolment implements StudentEnrolmentManager{
 
     @Override
     public void update() {
-        ArrayList<Integer> a = new ArrayList<>();
-        for (int j = 0; j <= enrolment.size(); j++ ){
-            if ((enrolment.get(j).semester.equals(this.semester))&&enrolment.get(j).student.id.equals(this.student.id)){
-                a.add(j);
-            }
-        }
-        for (int j = 0; j < a.size(); j++){
-            System.out.println(j+1 + ". " + enrolment.get(a.get(j)).course );
-        }
-
+        Scanner s = new Scanner(System.in);
+        System.out.println("What do you want to do?");
+        System.out.println("1. add enrollment");
+        System.out.println("2. delete enrolment");
     }
 
     @Override
@@ -86,9 +81,16 @@ public class StudentEnrolment implements StudentEnrolmentManager{
 
     @Override
     public void getOne() {
-        for (int i = 0; i< enrolment.size(); i++){
-            System.out.println(enrolment.get(i));
+        ArrayList<Integer> a = new ArrayList<>();
+        for (int j = 0; j <= enrolment.size(); j++ ){
+            if ((enrolment.get(j).semester.equals(this.semester))&&enrolment.get(j).student.id.equals(this.student.id)){
+                a.add(j);
+            }
         }
+        for (int j = 0; j < a.size(); j++){
+            System.out.println(j+1 + ". " + enrolment.get(a.get(j)).course );
+        }
+
     }
 
     @Override

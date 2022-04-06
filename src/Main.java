@@ -54,7 +54,7 @@ public class Main {
                 se.add();
             }
 
-            if (i == 2){
+            else if (i == 2){
                 input.nextLine();
                 System.out.println("Input semester that you want to update");
                 String semester = input.nextLine();
@@ -62,10 +62,29 @@ public class Main {
                 String id = input.nextLine();
 
                 StudentEnrolment se = new StudentEnrolment(id, semester);
+                se.getOne();
                 se.update();
+                int j = input.nextInt();
+                if (i == 1){
+                    se.add();
+                }
+                else if (i == 2){
+                    se.delete();
+                }
             }
 
-            if(i == 4){
+            else if(i == 3){
+                input.nextLine();
+                System.out.println("Input semester that you want to update");
+                String semester = input.nextLine();
+                System.out.println("Input student id that you want to update");
+                String id = input.nextLine();
+
+                StudentEnrolment se = new StudentEnrolment(id, semester);
+                se.getOne();
+            }
+
+            else if(i == 4){
                 StudentEnrolment se = new StudentEnrolment();
                 se.getAll();
             }
