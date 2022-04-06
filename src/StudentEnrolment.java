@@ -11,11 +11,16 @@ public class StudentEnrolment implements StudentEnrolmentManager{
         this.semester = semester;
     }
 
-    public StudentEnrolment(String semester){
+    public StudentEnrolment(String id, String semester){
+        this.student.id = id;
         this.semester = semester;
     }
 
     ArrayList<StudentEnrolment> enrolment = new ArrayList<>();
+
+    public StudentEnrolment() {
+
+    }
 
     @Override
     public String toString() {
@@ -26,9 +31,30 @@ public class StudentEnrolment implements StudentEnrolmentManager{
                 '}';
     }
 
+    public Student getStudent(String id){
+        if (this.student.id == id){
+            return student;
+        }
+        else{
+            System.out.println("no student with this id");
+        }
+        return null;
+    }
+
+    public Course getCourse(String id){
+        if (this.course.id == id){
+            return course;
+        }
+        else{
+            System.out.println("no course with this id");
+        }
+        return null;
+    }
+
     @Override
     public void add() {
         try {
+
             enrolment.add(this);
         }catch (Exception e){
             System.out.println("Wrong format of something");
@@ -39,12 +65,12 @@ public class StudentEnrolment implements StudentEnrolmentManager{
     public void update() {
         ArrayList<Integer> a = new ArrayList<>();
         for (int j = 0; j <= enrolment.size(); j++ ){
-            if (enrolment.get(j).semester.equals(this.semester)){
+            if ((enrolment.get(j).semester.equals(this.semester))&&enrolment.get(j).student.id.equals(this.student.id)){
                 a.add(j);
             }
         }
         for (int j = 0; j < a.size(); j++){
-            System.out.println(j+1 + ". " + enrolment.get(a.get(j)) );
+            System.out.println(j+1 + ". " + enrolment.get(a.get(j)).course );
         }
 
     }
@@ -60,12 +86,16 @@ public class StudentEnrolment implements StudentEnrolmentManager{
 
     @Override
     public void getOne() {
-
+        for (int i = 0; i< enrolment.size(); i++){
+            System.out.println(enrolment.get(i));
+        }
     }
 
     @Override
     public void getAll() {
-
+        for (int i = 0; i< enrolment.size(); i++){
+            System.out.println(enrolment.get(i));
+        }
     }
 }
 

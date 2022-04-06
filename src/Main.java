@@ -3,26 +3,33 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
+
     public static void menu(){
         System.out.println("Welcome to Enrollment app!!!");
         System.out.println("Which actions you want to do? (Input the number)");
         System.out.println("1. Add enrolment");
         System.out.println("2. Update enrolment");
-        System.out.println("3: Delete enrolment");
-        System.out.println("4: Print 1 enrolment");
-        System.out.println("5: Print all enrolments");
-        System.out.println("6: Exit");
+        System.out.println("3: Print 1 enrolment");
+        System.out.println("4: Print all enrolments");
+        System.out.println("5: Exit");
         System.out.print("Input: ");
     }
 
+    public static void updateMenu(){
+        System.out.println("Which actions you want to do? (Input the number)");
+        System.out.println("1. Add enrolment");
+        System.out.println("2: Delete enrolment");
+    }
+
     public static void main(String[] args) throws Exception {
-        Scanner input = new Scanner(System.in);
-        menu();
-        int i = input.nextInt();
-        while (i != 6){
+        int i = 0;
+        while (i != 5){
+            menu();
+            Scanner input = new Scanner(System.in);
+            i = input.nextInt();
             if (i == 1){
-                System.out.print("Please provide student id: ");
                 input.nextLine();
+                System.out.print("Please provide student id: ");
                 String sid = input.nextLine();
                 System.out.print("Please provide student name: ");
                 String sname = input.nextLine();
@@ -51,8 +58,16 @@ public class Main {
                 input.nextLine();
                 System.out.println("Input semester that you want to update");
                 String semester = input.nextLine();
-                StudentEnrolment se = new StudentEnrolment(semester);
+                System.out.println("Input student id that you want to update");
+                String id = input.nextLine();
+
+                StudentEnrolment se = new StudentEnrolment(id, semester);
                 se.update();
+            }
+
+            if(i == 4){
+                StudentEnrolment se = new StudentEnrolment();
+                se.getAll();
             }
         }
 

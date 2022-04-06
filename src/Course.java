@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Course implements StudentEnrolmentManager {
+public class Course {
     String id;
     String name;
     int credits;
@@ -33,31 +33,5 @@ public class Course implements StudentEnrolmentManager {
                 ", credits=" + credits +
                 '}';
     }
-
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void getOne() {
-
-    }
-
-    @Override
-    public void getAll() {
-
-    }
-
 
 }

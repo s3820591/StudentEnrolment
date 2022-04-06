@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Student implements StudentEnrolmentManager {
+public class Student {
     public String id;
     public String name;
     public Date birthday;
@@ -14,18 +14,6 @@ public class Student implements StudentEnrolmentManager {
 
     ArrayList<Student> students = new ArrayList<Student>();
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
@@ -33,32 +21,5 @@ public class Student implements StudentEnrolmentManager {
                 ", name='" + name + '\'' +
                 ", birthday=" + birthday +
                 '}';
-    }
-
-    @Override
-    public void add() {
-        students.add(this);
-    }
-
-    @Override
-    public void update() {
-        if (students.indexOf(this.id) != -1){
-            System.out.println("There is no student with this id!");
-        }
-    }
-
-    @Override
-    public void delete() {
-        students.remove(students.indexOf(this.id));
-    }
-
-    @Override
-    public void getOne() {
-
-    }
-
-    @Override
-    public void getAll() {
-
     }
 }
