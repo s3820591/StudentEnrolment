@@ -15,12 +15,6 @@ public class Main {
         System.out.print("Input: ");
     }
 
-    public static void updateMenu(){
-        System.out.println("Which actions you want to do? (Input the number)");
-        System.out.println("1. Add enrolment");
-        System.out.println("2: Delete enrolment");
-    }
-
     public static void main(String[] args) throws Exception {
         int i = 0;
         while (i != 5){
